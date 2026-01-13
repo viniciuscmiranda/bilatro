@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"delay",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"delay",
+  "parent":{
+    "name":"utils",
+    "path":"folders/scripts/utils.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

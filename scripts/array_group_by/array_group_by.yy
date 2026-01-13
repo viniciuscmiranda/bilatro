@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"array_group_by",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"array_group_by",
+  "parent":{
+    "name":"arrays",
+    "path":"folders/scripts/utils/arrays.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

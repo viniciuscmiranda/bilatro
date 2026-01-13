@@ -1,0 +1,6 @@
+enum SUITS {
+	SPADES,
+	HEARTS,
+	CLUBS,
+	DIAMONDS
+}

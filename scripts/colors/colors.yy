@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"colors",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"colors",
+  "parent":{
+    "name":"tokens",
+    "path":"folders/scripts/tokens.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

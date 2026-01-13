@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"extract_text_settings",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"extract_text_settings",
+  "parent":{
+    "name":"strings",
+    "path":"folders/scripts/utils/strings.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

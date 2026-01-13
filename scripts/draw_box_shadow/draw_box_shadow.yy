@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"draw_box_shadow",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"draw_box_shadow",
+  "parent":{
+    "name":"draw",
+    "path":"folders/scripts/utils/draw.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

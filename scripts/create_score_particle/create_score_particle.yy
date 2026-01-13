@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"create_score_particle",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"create_score_particle",
+  "parent":{
+    "name":"game",
+    "path":"folders/scripts/utils/game.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

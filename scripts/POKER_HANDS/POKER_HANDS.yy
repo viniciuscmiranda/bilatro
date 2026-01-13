@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"POKER_HANDS",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"POKER_HANDS",
+  "parent":{
+    "name":"enums",
+    "path":"folders/scripts/enums.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

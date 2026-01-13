@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_poker_hand_scoring_cards",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_poker_hand_scoring_cards",
+  "parent":{
+    "name":"game",
+    "path":"folders/scripts/utils/game.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

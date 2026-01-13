@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_ranks_array",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_ranks_array",
+  "parent":{
+    "name":"mappers",
+    "path":"folders/scripts/utils/game/mappers.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

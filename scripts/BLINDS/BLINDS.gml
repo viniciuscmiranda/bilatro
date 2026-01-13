@@ -1,0 +1,5 @@
+enum BLINDS {
+	SMALL_BLIND,
+	BIG_BLIND,
+	BOSS_BLIND
+}

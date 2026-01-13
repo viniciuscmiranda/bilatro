@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"RANKS",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"RANKS",
+  "parent":{
+    "name":"enums",
+    "path":"folders/scripts/enums.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

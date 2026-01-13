@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"radius",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"radius",
+  "parent":{
+    "name":"tokens",
+    "path":"folders/scripts/tokens.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"TRIGGER_TYPES",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"TRIGGER_TYPES",
+  "parent":{
+    "name":"enums",
+    "path":"folders/scripts/enums.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

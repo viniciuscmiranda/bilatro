@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"BLINDS",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"BLINDS",
+  "parent":{
+    "name":"enums",
+    "path":"folders/scripts/enums.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

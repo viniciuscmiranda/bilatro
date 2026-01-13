@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"break_text",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"break_text",
+  "parent":{
+    "name":"strings",
+    "path":"folders/scripts/utils/strings.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

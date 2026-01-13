@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"struct_get_entries",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"struct_get_entries",
+  "parent":{
+    "name":"structs",
+    "path":"folders/scripts/utils/structs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

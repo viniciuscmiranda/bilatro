@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Joker",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Joker",
+  "parent":{
+    "name":"classes",
+    "path":"folders/scripts/classes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

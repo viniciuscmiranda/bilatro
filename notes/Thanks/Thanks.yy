@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"v1",
+  "%Name":"Thanks",
+  "name":"Thanks",
+  "parent":{
+    "name":"About",
+    "path":"folders/@libs/horri-fi/About.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}

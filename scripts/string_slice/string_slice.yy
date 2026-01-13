@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"string_slice",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"string_slice",
+  "parent":{
+    "name":"strings",
+    "path":"folders/scripts/utils/strings.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

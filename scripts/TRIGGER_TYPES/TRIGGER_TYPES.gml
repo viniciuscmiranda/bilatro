@@ -1,0 +1,5 @@
+enum TRIGGER_TYPES {
+	CHIPS,
+	MULT,
+	TIMES_MULT
+}

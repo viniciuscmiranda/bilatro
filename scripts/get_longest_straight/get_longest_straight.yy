@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_longest_straight",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_longest_straight",
+  "parent":{
+    "name":"game",
+    "path":"folders/scripts/utils/game.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_suit_color",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_suit_color",
+  "parent":{
+    "name":"mappers",
+    "path":"folders/scripts/utils/game/mappers.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

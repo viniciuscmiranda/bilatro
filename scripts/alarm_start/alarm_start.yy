@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"alarm_start",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"alarm_start",
+  "parent":{
+    "name":"utils",
+    "path":"folders/scripts/utils.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

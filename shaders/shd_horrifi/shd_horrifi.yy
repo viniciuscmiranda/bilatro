@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_horrifi",
+  "name":"shd_horrifi",
+  "parent":{
+    "name":"horri-fi",
+    "path":"folders/@libs/horri-fi.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

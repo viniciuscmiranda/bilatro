@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"create_tooltip",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"create_tooltip",
+  "parent":{
+    "name":"game",
+    "path":"folders/scripts/utils/game.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

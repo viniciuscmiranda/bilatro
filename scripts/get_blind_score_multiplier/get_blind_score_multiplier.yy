@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_blind_score_multiplier",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_blind_score_multiplier",
+  "parent":{
+    "name":"mappers",
+    "path":"folders/scripts/utils/game/mappers.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
