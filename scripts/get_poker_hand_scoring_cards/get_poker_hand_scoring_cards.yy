@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"get_poker_hand_scoring_cards",
   "parent":{
-    "name":"game",
-    "path":"folders/scripts/utils/game.yy",
+    "name":"hands",
+    "path":"folders/scripts/game/hands.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

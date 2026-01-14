@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"alarm_start",
   "parent":{
-    "name":"utils",
-    "path":"folders/scripts/utils.yy",
+    "name":"alarms",
+    "path":"folders/scripts/utils/alarms.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

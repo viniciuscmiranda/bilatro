@@ -1,15 +1,18 @@
 event_inherited()
 ALARMS = { TRIGGER: 0, END: 1 }
 
-trigger_delay = delay(10)
-end_delay = delay(5)
+trigger_delay = 10
+end_delay = 5
 
 // setup jokers
+/// @type {Array<Id.Instance.obj_joker_parent>}
 jokers = []
+/// @type {Array<Id.Instance.obj_joker_parent>}
 triggering_jokers = []
 
 // init drag area props
 items = jokers
+// adding to the sprite width so jokers stay separate if possible
 item_width = sprite_get_width(spr_jokers) + SPACE_2
 
 // subscribers
@@ -65,10 +68,10 @@ function _on_score_end() {
 	
 	if (array_length(triggering_jokers) > 0) {
 		// trigger jokers if any were found
-		alarm_set(ALARMS.TRIGGER, trigger_delay)
+		alarm_set(ALARMS.TRIGGER, delay(trigger_delay))
 	} else {
 		// otherwise finishes jokers event
-		alarm_set(ALARMS.END, end_delay)
+		alarm_set(ALARMS.END, delay(end_delay))
 	} 
 }
 
@@ -77,7 +80,7 @@ function _on_joker_trigger_start(_joker) {
 	// ignores if jokers is the type that triggers at the end of scoring
 	if not (_joker.skip) return;
 	
-	if (alarm_get(ALARMS.TRIGGER) > 0) {
+	if (alarm_running(ALARMS.TRIGGER)) {
 		// if in middle of trigger event stop and set to failed
 		trigger_fail = true
 		alarm_set(ALARMS.TRIGGER, -1)
@@ -104,10 +107,10 @@ function _on_joker_trigger_end(_joker) {
 		
 		if (array_length(triggering_jokers) > 0) {
 			// retry trigger if there's any jokers
-			alarm_set(ALARMS.TRIGGER, trigger_delay)
+			alarm_set(ALARMS.TRIGGER, delay(trigger_delay))
 		} else {
 			// otherwise just end
-			alarm_set(ALARMS.END, end_delay)
+			alarm_set(ALARMS.END, delay(end_delay))
 		} 
 	}
 }

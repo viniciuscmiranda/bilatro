@@ -6,7 +6,7 @@
   "name":"init_round_ui",
   "parent":{
     "name":"ui",
-    "path":"folders/scripts/utils/ui.yy",
+    "path":"folders/scripts/game/ui.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

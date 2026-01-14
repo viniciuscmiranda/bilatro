@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"get_poker_hand_label",
   "parent":{
-    "name":"mappers",
-    "path":"folders/scripts/utils/game/mappers.yy",
+    "name":"hands",
+    "path":"folders/scripts/game/mappers/hands.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

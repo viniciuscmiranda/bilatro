@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"define",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"define",
+  "parent":{
+    "name":"instances",
+    "path":"folders/scripts/utils/instances.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

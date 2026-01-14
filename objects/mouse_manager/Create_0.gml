@@ -1,7 +1,9 @@
 x_pressed = 0
 y_pressed = 0
-min_drag_dist = 8
+min_drag_dist = 5
+/// @type {Id.Instance.obj_clickable_primitive}
 hovered_instance = noone
+/// @type {Id.Instance.obj_clickable_primitive}
 pressed_instance = noone
 
 /// @param {Real} _x
@@ -37,5 +39,5 @@ function get_top_instance(_x, _y) {
 /// @param {Id.Instance.obj_clickable_primitive} _instance
 /// @return {Bool}
 function is_draggable(_instance) {
-	return object_is_ancestor(_instance.object_index, obj_draggable_primitive)
+	return is(obj_draggable_primitive, _instance)
 }

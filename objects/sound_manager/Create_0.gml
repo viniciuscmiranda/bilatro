@@ -1,15 +1,17 @@
 ALARMS = { DRAW: 0 }
 
+// setup theme
 theme_fade_time = 5
 theme_is_fading_out = false
 theme = play_theme()
 theme_length = audio_sound_length(theme)
 theme_time_left_stop = 0.05
 
-// subscribers
+// setup draw
 draw_count = 0
-draw_sound_delay = delay(9)
+draw_delay = 9
 
+// subscribers
 subscribe(EVENTS.SELECT_CARD, _on_select_card)
 subscribe(EVENTS.CARD_TRIGGER, _on_card_trigger)
 subscribe(EVENTS.JOKER_TRIGGER, _on_card_trigger)
@@ -28,11 +30,7 @@ function _on_select_card() {
 
 /// @param {Id.Instance.obj_clickable_primitive} _clickable
 function _on_clickable_click(_clickable) {
-	var _is_button =
-		_clickable.object_index == obj_button
-		or object_is_ancestor(_clickable.object_index, obj_button)
-		
-	if (_is_button) {
+	if (is(obj_button, _clickable)) {
 		play_sfx_pitched(snd_button_click)
 	}
 }
@@ -45,12 +43,16 @@ function _on_draw_cards(_cards) {
 
 /// @param {Id.Instance.obj_card_parent} _card
 function _on_card_trigger(_card) {
+	var _spd = global.animation_speed / global.max_animation_speed
+	var _min = 0.5 + _spd
+	var _max = 0.8 + _spd
+	
 	switch (_card.trigger_type) {
 		case TRIGGER_TYPES.CHIPS:
-			play_sfx_pitched(snd_chips)
+			play_sfx_pitched(snd_chips, _min, _max)
 			break
 		case TRIGGER_TYPES.MULT:
-			play_sfx_pitched(snd_mult)
+			play_sfx_pitched(snd_mult, _min, _max)
 			break
 	}
 }

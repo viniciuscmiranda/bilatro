@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"get_joker_object",
   "parent":{
-    "name":"mappers",
-    "path":"folders/scripts/utils/game/mappers.yy",
+    "name":"jokers",
+    "path":"folders/scripts/game/mappers/jokers.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

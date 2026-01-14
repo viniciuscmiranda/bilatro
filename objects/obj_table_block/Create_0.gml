@@ -1,19 +1,23 @@
 ALARMS = { SCORE: 0, DISCARD: 1, END: 2 }
 
 // setup cards
+/// @type {Array<Id.Instance.obj_card>}
 cards = []
+/// @type {Array<Id.Instance.obj_card>}
 scoring_cards = []
 
 // subscribers
+/// @type {Id.Instance.obj_card}
 curr_card = noone
-score_fail = false
+/// @type {Id.Instance.obj_joker_parent}
 last_joker = noone
+score_fail = false
 
-start_score_delay = delay(30)
-score_delay = delay(10)
-start_discard_delay = delay(5)
-discard_delay = delay(3)
-end_delay = delay(5)
+start_score_delay = 30
+score_delay = 10
+start_discard_delay = 5
+discard_delay = 3
+end_delay = 5
 
 subscribe(EVENTS.PLAY_HAND, _on_play_hand)
 subscribe(EVENTS.JOKERS_END, _on_jokers_end)
@@ -62,7 +66,7 @@ function _on_play_hand(_selected_cards) {
 	}
 	
 	// starts scoring
-	alarm_set(ALARMS.SCORE, start_score_delay)
+	alarm_set(ALARMS.SCORE, delay(start_score_delay))
 }
 
 /// @param {Id.Instance.obj_card} _card
@@ -72,21 +76,22 @@ function _on_card_trigger_end(_card) {
 	
 	if (array_length(scoring_cards) > 0) {
 		// if there are more cards start alarm to scores next card
-		alarm_set(ALARMS.SCORE, score_delay)
+		alarm_set(ALARMS.SCORE, delay(score_delay))
 	} else {
 		// otherwise start end event
-		alarm_set(ALARMS.END, end_delay)
+		alarm_set(ALARMS.END, delay(end_delay))
 	}
 }
 
 /// @param {Id.Instance.obj_joker_parent} _joker
 function _on_joker_trigger_start(_joker) {
+	last_joker = _joker
+	
 	// if not scoring, ignores
-	if (alarm_get(ALARMS.SCORE) < 0) return;
+	if not (alarm_running(ALARMS.SCORE)) return;
 	
 	// otherwise stop scoring and set failing state
 	score_fail = true
-	last_joker = _joker // TODO: this might have to be moved before the return statement
 	alarm_set(ALARMS.SCORE, -1)
 }
 
@@ -98,12 +103,12 @@ function _on_joker_trigger_end(_joker) {
 	// otherwise reset failing states and retry scoring
 	score_fail = false
 	last_joker = noone
-	alarm_set(ALARMS.SCORE, score_delay)
+	alarm_set(ALARMS.SCORE, delay(score_delay))
 }
 
 function _on_jokers_end() {
 	// cleanup after jokers finish scoring
 	curr_card = noone
 	scoring_cards = []
-	alarm_set(ALARMS.DISCARD, start_discard_delay)
+	alarm_set(ALARMS.DISCARD, delay(start_discard_delay))
 }

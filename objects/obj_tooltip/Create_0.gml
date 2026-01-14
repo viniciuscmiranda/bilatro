@@ -9,6 +9,7 @@ width = 320
 content_height = height * 0.8
 min_scale_to_draw_text = 0.6
 line_height = SPACE_3
+render_delay = 20
 
 // init description
 var _settings = extract_text_settings(description)
@@ -36,14 +37,11 @@ target_scale = 1
 render = false
 is_unmounting = false
 
-alarm_set(ALARMS.RENDER, 20)
+alarm_set(ALARMS.RENDER, render_delay)
 // destroys instance if it did not render in time
-alarm_set(ALARMS.DESTROY, 25)
+alarm_set(ALARMS.DESTROY, render_delay + 5)
 
 function destroy() {
-	// moves back to target position
-	target_x = target.x
-	target_y = target.y
 	// decreases size until it desapears
 	target_scale = 0
 	is_unmounting = true

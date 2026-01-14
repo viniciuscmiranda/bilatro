@@ -16,24 +16,6 @@ global.master_volume = 1
 global.sfx_volume = 0.8 * global.master_volume 
 global.music_volume = 0.2 * global.master_volume
 
-// poker hand rules
-global.poker_hand_rules = {
-	high_card_cards: 1,
-	pair_cards: 2,
-	three_of_a_kind_cards: 3,
-	four_of_a_kind_cards: 4,
-	five_of_a_kind_cards: 5,
-	flush_cards: 5,
-	straight_cards: 5,
-	straight_gap: 0
-} 
-
-// game settings
-global.initial_poker_hands_level = 1 
-global.max_selected_cards = 5 
-global.initial_ante = 1 
-global.initial_round = 1 
-
 // init managers
 instance_create_depth(0, 0, 0, pubsub_manager)
 instance_create_depth(0, 0, 0, camera_manager)

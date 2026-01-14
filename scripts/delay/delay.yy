@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"delay",
   "parent":{
-    "name":"utils",
-    "path":"folders/scripts/utils.yy",
+    "name":"timing",
+    "path":"folders/scripts/utils/timing.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

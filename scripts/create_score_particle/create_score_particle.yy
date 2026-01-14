@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"create_score_particle",
   "parent":{
-    "name":"game",
-    "path":"folders/scripts/utils/game.yy",
+    "name":"ui",
+    "path":"folders/scripts/game/ui.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

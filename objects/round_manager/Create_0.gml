@@ -5,9 +5,10 @@ animation_speed_increase = 0.05
 chips = 0
 mult = 0
 total_score = 0
-poker_hand = undefined
 is_win = false
 is_lose = false
+/// @type {Enum.POKER_HANDS}
+poker_hand = undefined
 
 // TODO: raise some components to run level
 var _ui = init_round_ui()
@@ -79,7 +80,7 @@ function _on_play_hand() {
 }
 
 function _on_jokers_end() {
-	// consolidates score after jokers end
+	// consolidates score after jokers scored
 	total_score += chips * mult
 	chips = 0
 	mult = 0
@@ -91,7 +92,7 @@ function _on_jokers_end() {
 	// checks for win or lose
 	if (total_score >= score_requirement) {
 		is_win = true
-		publish(EVENTS.ROUND_END)
+		publish(EVENTS.ROUND_WIN)
 	} else if (remaining_plays <= 0) {
 		is_lose = true
 		publish(EVENTS.ROUND_LOSE)

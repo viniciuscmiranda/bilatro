@@ -6,7 +6,7 @@
   "name":"card_sorter",
   "parent":{
     "name":"game",
-    "path":"folders/scripts/utils/game.yy",
+    "path":"folders/scripts/game.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

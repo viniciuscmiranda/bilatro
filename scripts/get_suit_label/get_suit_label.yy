@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"get_suit_label",
   "parent":{
-    "name":"mappers",
-    "path":"folders/scripts/utils/game/mappers.yy",
+    "name":"suits",
+    "path":"folders/scripts/game/mappers/suits.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

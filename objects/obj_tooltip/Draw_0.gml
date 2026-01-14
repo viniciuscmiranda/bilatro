@@ -13,7 +13,8 @@ var _y1 = y - s(height / 2)
 var _x2 = x + s(width / 2)
 var _y2 = y + s(height / 2)
 var _border_w = s(SPACE_1 / 2)
-var _radius = s(RADIUS_4)
+var _rad = s(RADIUS_4)
+var _srad = s(RADIUS_3)
 var _shadow_offset = s(SPACE_1)
 
 draw_set_halign(fa_center)
@@ -26,8 +27,8 @@ draw_box_shadow(
 	_x2 + _border_w,
 	_y2 + _border_w,
 	c_white,
-	_radius,
-	_radius,
+	_rad,
+	_rad,
 	-_shadow_offset,
 	_shadow_offset,
 	_alpha
@@ -36,7 +37,7 @@ draw_box_shadow(
 // draws container
 draw_set_colour(COLOR_TOOLTIP_BACKGROUND)
 draw_set_alpha(_alpha)
-draw_roundrect_ext(_x1, _y1, _x2, _y2, _radius, _radius, false)
+draw_roundrect_ext(_x1, _y1, _x2, _y2, _rad, _rad, false)
 
 // setup for drawing content
 var _content_h = s(content_height)
@@ -50,11 +51,11 @@ var _content_border_w = s(SPACE_1 / 3)
 
 // draws content container border
 draw_set_colour(c_gray)
-draw_roundrect_ext(_content_x1, _content_y1, _content_x2, _content_y2 + _content_border_w, _radius, _radius, false)
+draw_roundrect_ext(_content_x1, _content_y1, _content_x2, _content_y2 + _content_border_w, _srad, _srad, false)
 
 // draws content container
 draw_set_colour(c_white)
-draw_roundrect_ext(_content_x1, _content_y1, _content_x2, _content_y2, _radius, _radius, false)
+draw_roundrect_ext(_content_x1, _content_y1, _content_x2, _content_y2, _srad, _srad, false)
 
 draw_reset()
 // don't draw text if it's still too small

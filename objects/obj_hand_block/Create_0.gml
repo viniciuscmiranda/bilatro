@@ -3,18 +3,29 @@ event_inherited()
 ALARMS = { DRAW: 0, DISCARD: 1 }
 
 is_disabled = false
+draw_delay = 10
+discard_delay = 3
 
 // setup cards
+/// @type {Array<Id.Instance.obj_card>}
 cards = []
+/// @type {Array<Id.Instance.obj_card>}
 selected_cards = []
+/// @type {Array<Id.Instance.obj_card>}
 drawing_cards = []
+/// @type {Array<Id.Instance.obj_card>}
 discarding_cards = []
 
 // setup drag area props
 items = cards
+// setting width to slighy shorter than the sprite so cards are placed on top of each other
 item_width = sprite_get_width(spr_cards) * 0.8
 function get_item_position(_card, _x, _y) {
-	return { x: _x, y: _y - (is_card_selected(_card) * SPACE_6) }
+	return { 
+		x: _x,
+		// selected cards move upwards a bit
+		y: _y - (is_card_selected(_card) * SPACE_6)
+	}
 }
 
 // subscribers
@@ -81,7 +92,7 @@ function is_card_selected(_card) {
 }
 
 function can_select_cards() {
-	return not is_disabled and array_length(selected_cards) < global.max_selected_cards
+	return not is_disabled and array_length(selected_cards) < global.run.max_selected_cards
 }
 
 /// @description Sorts selected cards by their index on cards array

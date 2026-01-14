@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"build_poker_hand_rules",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"build_poker_hand_rules",
+  "parent":{
+    "name":"hands",
+    "path":"folders/scripts/game/hands.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

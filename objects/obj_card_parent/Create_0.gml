@@ -5,6 +5,11 @@ ALARMS = { TRIGGER: 0 }
 float_distance = 0.6 * sign(random_range(-1, 1))
 float_timer = 0
 float_delay = round(random(60))
+max_target_dist_for_float = 10
+float_lerp_base = 1.65
+float_lerp_scale = 0.03
+min_float_delay = 15
+max_float_delay = 20
 prev_y = y
 
 // tooltip config
@@ -12,10 +17,9 @@ tooltip_enable = true
 tooltip_title = ""
 tooltip_description = ""
 tooltip_inst = noone
+max_target_dist_for_tooltip = 5 
 
 // trigger config
-var _is_joker = object_index == obj_joker_parent or object_is_ancestor(object_index, obj_joker_parent)
-
 trigger_type = -1
 trigger_value = ""
 trigger_count = 0
@@ -25,6 +29,7 @@ last_triggered = noone
 on_hold = false
 trigger_callback = function() { }
 
+var _is_joker = is(obj_joker_parent)
 TRIGGER_EVENT = _is_joker ? EVENTS.JOKER_TRIGGER : EVENTS.CARD_TRIGGER
 TRIGGER_START_EVENT = _is_joker ? EVENTS.JOKER_TRIGGER_START : EVENTS.CARD_TRIGGER_START
 TRIGGER_END_EVENT = _is_joker ? EVENTS.JOKER_TRIGGER_END : EVENTS.CARD_TRIGGER_END

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"step",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"step",
+  "parent":{
+    "name":"timing",
+    "path":"folders/scripts/utils/timing.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

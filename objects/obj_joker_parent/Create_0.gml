@@ -5,9 +5,10 @@ skip = false
 image_index = type
 
 // setup default methods
-init_events = function() {}
-/// @description Triggers Joker hability
-trigger = function() { }
+define({
+	init_events: function() {},
+	trigger: function() {}
+})
 
 function reset_events() {
 	unsubscribe_all()

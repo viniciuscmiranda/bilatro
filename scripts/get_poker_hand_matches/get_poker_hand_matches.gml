@@ -1,11 +1,10 @@
 /// @param {Array<Struct.Card>} _cards
-/// @param {Struct} [_rules]
+/// @param {Struct} _rules
 /// @return {Array<Enum.POKER_HANDS>}
 /// @description 
 /// Returns a list of matching POKER_HANDS sorted by enum order
-function get_poker_hand_matches(_cards, _rules = global.poker_hand_rules) {
+function get_poker_hand_matches(_cards, _rules) {
 	if (array_length(_cards) < 1) return []
-	_rules = struct_merge(_rules, global.poker_hand_rules)
 	
 	var _suits_by_count = array_group_count(_cards, function(_card) {
 		return _card.suit
@@ -24,32 +23,32 @@ function get_poker_hand_matches(_cards, _rules = global.poker_hand_rules) {
 	var _is_straight = false
 	
 	// Flush
-	if (_top_suit.count >= _rules.flush_cards) {
+	if (_top_suit.count >= _rules[$ POKER_HAND_RULES.FLUSH_MIN]) {
 		array_push(_matches, POKER_HANDS.FLUSH)
 		_is_flush = true
 	}
 	
 	// High Card
-	if (_top_rank.count >= _rules.high_card_cards) {
+	if (_top_rank.count >= _rules[$ POKER_HAND_RULES.HIGH_CARD_MIN]) {
 		array_push(_matches, POKER_HANDS.HIGH_CARD)
 	}
 	
 	// Pair
-	if (_top_rank.count >= _rules.pair_cards) {
+	if (_top_rank.count >= _rules[$ POKER_HAND_RULES.PAIR_MIN]) {
 		array_push(_matches, POKER_HANDS.PAIR)
 		
 		// Two Pairs
-		if (_top2_rank and _top2_rank.count >= _rules.pair_cards) {
+		if (_top2_rank and _top2_rank.count >= _rules[$ POKER_HAND_RULES.PAIR_MIN]) {
 			array_push(_matches, POKER_HANDS.TWO_PAIRS)
 		}
 	}
 	
 	// Three of a Kind
-	if (_top_rank.count >= _rules.three_of_a_kind_cards) {
+	if (_top_rank.count >= _rules[$ POKER_HAND_RULES.THREE_OF_A_KIND_MIN]) {
 		array_push(_matches, POKER_HANDS.THREE_OF_A_KIND)
 		
 		// Full House
-		if (_top2_rank and _top2_rank.count >= _rules.pair_cards) {
+		if (_top2_rank and _top2_rank.count >= _rules[$ POKER_HAND_RULES.PAIR_MIN]) {
 			array_push(_matches, POKER_HANDS.FULL_HOUSE)
 			
 			// Flush House
@@ -60,12 +59,12 @@ function get_poker_hand_matches(_cards, _rules = global.poker_hand_rules) {
 	}
 	
 	// Four of a Kind
-	if (_top_rank.count >= _rules.four_of_a_kind_cards) {
+	if (_top_rank.count >= _rules[$ POKER_HAND_RULES.FOUR_OF_A_KIND_MIN]) {
 		array_push(_matches, POKER_HANDS.FOUR_OF_A_KIND)
 	}
 	
 	// Five of a Kind
-	if (_top_rank.count >= _rules.five_of_a_kind_cards) {
+	if (_top_rank.count >= _rules[$ POKER_HAND_RULES.FIVE_OF_A_KIND_MIN]) {
 		array_push(_matches, POKER_HANDS.FIVE_OF_A_KIND)
 		
 		// Flush Five
@@ -75,7 +74,7 @@ function get_poker_hand_matches(_cards, _rules = global.poker_hand_rules) {
 	}
 		
 	// Straight
-	if (array_length(get_longest_straight(_cards)) >= _rules.straight_cards) {
+	if (array_length(get_longest_straight(_cards, _rules)) >= _rules[$ POKER_HAND_RULES.STRAIGHT_MIN]) {
 		array_push(_matches, POKER_HANDS.STRAIGHT)
 		_is_straight = true
 	}

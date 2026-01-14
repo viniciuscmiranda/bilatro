@@ -2,9 +2,10 @@ event_inherited()
 ALARMS = { DRAW: 0 }
 
 // setup
+/// @type {Array<Struct.Card>}
 cards = []
-draw_delay_after_score = delay(15)
-draw_delay_after_discard = delay(5)
+draw_delay_after_score = 15
+draw_delay_after_discard = 5
 
 // subscribers
 subscribe(EVENTS.JOKERS_END, _on_jokers_end)
@@ -12,11 +13,11 @@ subscribe(EVENTS.DISCARD_END, _on_discard_end)
 subscribe(EVENTS.ROUND_START, _on_round_start)
 
 function _on_jokers_end() {
-	alarm_set(ALARMS.DRAW, draw_delay_after_score)
+	alarm_set(ALARMS.DRAW, delay(draw_delay_after_score))
 }
 
 function _on_discard_end() {
-	alarm_set(ALARMS.DRAW, draw_delay_after_discard)
+	alarm_set(ALARMS.DRAW, delay(draw_delay_after_discard))
 }
 
 function _on_round_start() {
@@ -24,7 +25,7 @@ function _on_round_start() {
 	array_shuffle_ext(cards)
 	
 	// draw initial cards
-	draw_cards(global.run.max_hand_size)
+	draw_cards(global.round.hand_size)
 }
 
 // helpers
@@ -42,7 +43,7 @@ function draw_cards(_amount) {
 		var _card_instance = instance_create_depth(x, y, 0, obj_card, {
 			suit: _card.suit,
 			rank: _card.rank,
-			// set it's back image to the deck sprite
+			// sets card's back image to the deck sprite
 			back_sprite_index: sprite_index,
 			back_image_index: image_index,
 		})

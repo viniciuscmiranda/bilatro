@@ -1,10 +1,9 @@
 /// @param {Array<Struct.Card>} _cards
-/// @param {Struct} [_rules]
+/// @param {Struct} _rules
 /// @return {Array<Struct.Card>}
 /// @description Returns a list of scoring cards for current poker hand
-function get_poker_hand_scoring_cards(_cards, _rules = global.poker_hand_rules) {
+function get_poker_hand_scoring_cards(_cards, _rules) {
 	if (array_length(_cards) < 1) return []
-	_rules = struct_merge(_rules, global.poker_hand_rules)
 	
 	var _matches = get_poker_hand_matches(_cards, _rules)
 	var _poker_hand = array_last(_matches)

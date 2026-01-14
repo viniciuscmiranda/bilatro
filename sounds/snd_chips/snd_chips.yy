@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_chips",
   "parent":{
-    "name":"sounds",
-    "path":"folders/sounds.yy",
+    "name":"sfx",
+    "path":"folders/sounds/sfx.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

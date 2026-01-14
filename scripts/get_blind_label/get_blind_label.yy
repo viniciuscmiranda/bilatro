@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"get_blind_label",
   "parent":{
-    "name":"mappers",
-    "path":"folders/scripts/utils/game/mappers.yy",
+    "name":"blinds",
+    "path":"folders/scripts/game/mappers/blinds.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

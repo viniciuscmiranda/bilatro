@@ -1,13 +1,11 @@
 /// @param {Array<Struct.Card>} _cards
-/// @param {Struct} [_rules]
+/// @param {Struct} _rules
 /// @param {Bool} [_include_duplicates] Keeps cards with duplicated ranks in the same Straight
 /// @return {Array<Struct.Card>}
 /// @description 
 /// Returns a filtered list of cards that could be used to form the longest Straight hand
 /// In case of multiple Straights with the same amount of cards were found, the ones made with lower rank cards will be returned
-function get_longest_straight(_cards, _rules = global.poker_hand_rules, _include_duplicates = false) {
-	_rules = struct_merge(_rules, global.poker_hand_rules)
-	
+function get_longest_straight(_cards, _rules, _include_duplicates = false) {
 	/// @type {Array<Struct.Card>}
 	var _cards_by_rank = array_to_sorted(_cards, function(_a, _b) {
 		return _a.rank - _b.rank
@@ -39,7 +37,7 @@ function get_longest_straight(_cards, _rules = global.poker_hand_rules, _include
 			var _next_to_expected_diff = _next_card_rank - _expected_next_rank
 
 			if (
-				_next_to_expected_diff <= _rules.straight_gap
+				_next_to_expected_diff <= _rules[$ POKER_HAND_RULES.STRAIGHT_GAP]
 				and not array_contains(_wrapped_cards, _first_card)
 			) {
 				array_shift(_cards_by_rank)
@@ -62,7 +60,7 @@ function get_longest_straight(_cards, _rules = global.poker_hand_rules, _include
 			var _next_to_expected_diff = _next_card.rank - _expected_next_rank
 
 			// if next card is not valid creates a new straight
-			if (_next_to_expected_diff > _rules.straight_gap) {
+			if (_next_to_expected_diff > _rules[$ POKER_HAND_RULES.STRAIGHT_GAP]) {
 				array_push(_straights, [])
 			} 
 			

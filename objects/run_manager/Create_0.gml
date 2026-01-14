@@ -1,16 +1,18 @@
 /// @desc
-
 // setup constants
+max_selected_cards = 5
 max_hand_size = 8
 max_discards = 3
 max_plays = 4
 max_jokers = 5
-ante_count = global.initial_ante
-round_count = global.initial_round
+ante_count = 1
+round_count = 1
 blind = get_blinds_array()[0]
 
 // init rules
-poker_hand_rules = {}
+default_poker_hand_rules = build_poker_hand_rules()
+poker_hand_rules = struct_merge(default_poker_hand_rules, {})
+
 ante_base_scores = [
 	100,
 	300,
@@ -23,30 +25,20 @@ ante_base_scores = [
 	100_000
 ]
 
-// init poker hands
+// init run state
+deck = build_deck()
+/// @type {Array<Real>}
 poker_hands_levels = array_map(
 	get_poker_hands_array(),
-	function () { return global.initial_poker_hands_level }
+	function () { return 1 }
 )
 
-// init jokers
+/// @type {Array<Struct.Joker>}
 jokers = [
 	new Joker(JOKERS.SPADES_JOKER),
 	new Joker(JOKERS.DIAMONDS_JOKER),
 	new Joker(JOKERS.JOKER)
 ]
-
-// init deck
-deck = []
-var _suits = get_suits_array()
-var _ranks = get_ranks_array()
-
-for (var s = 0; s < array_length(_suits); s++) {
-    for (var r = 0; r < array_length(_ranks); r++) {
-		var _card = new Card(_suits[s], _ranks[r])
-        array_push(deck, _card)
-    }
-}
 
 // init round
 // TODO: only init after start button is clicked
@@ -58,9 +50,9 @@ global.round = instance_create_depth(0, 0, 0, round_manager, {
 })
 
 // subscribers
-subscribe(EVENTS.ROUND_END, _on_round_end)
+subscribe(EVENTS.ROUND_WIN, _on_round_win)
 
-function _on_round_end() {
+function _on_round_win() {
 	var _blinds = get_blinds_array()
 	var _blinds_count = array_length(_blinds)
 	
@@ -78,6 +70,17 @@ function _on_round_end() {
 /// @param {Enum.POKER_HANDS} _poker_hand
 function level_up_poker_hand(_poker_hand) {
 	poker_hand_levels[_poker_hand]++
+}
+
+/// @param {Enum.POKER_HAND_RULES} _rule
+/// @param {Real} _value
+function set_poker_hand_rule(_rule, _value) {
+	poker_hand_rules[$ _rule] = _value
+}
+
+/// @param {Enum.POKER_HAND_RULES} _rule
+function reset_poker_hand_rule(_rule) {
+	poker_hand_rules[$ _rule] = default_poker_hand_rules[$ _rule]
 }
 
 /// @param {Enum.POKER_HANDS} _poker_hand

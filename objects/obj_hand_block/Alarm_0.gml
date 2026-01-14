@@ -1,5 +1,4 @@
 /// @description Draw
-var _draw_delay = delay(10)
 if (array_length(drawing_cards) < 1) exit
 
 var _card = array_shift(drawing_cards)
@@ -32,4 +31,4 @@ array_sort(cards, function (_a, _b) {
 	return card_sorter(_a.data, _b.data)
 })
 
-alarm_set(ALARMS.DRAW, _draw_delay)
+alarm_set(ALARMS.DRAW, delay(draw_delay))

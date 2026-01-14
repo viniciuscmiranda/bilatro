@@ -11,6 +11,6 @@ if (prev_value != value) {
 	prev_value = value
 }
 
-curr_value = lerp(curr_value, value, value_lerp_step )
-scale = lerp(scale, init_scale, scale_lerp_step)
-angle = lerp(angle, 0, angle_lerp_step)
+curr_value = lerp(curr_value, value, step(value_lerp_step))
+scale = lerp(scale, init_scale, step(scale_lerp_step))
+angle = lerp(angle, 0, step(angle_lerp_step))

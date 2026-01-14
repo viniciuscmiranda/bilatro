@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"get_ranks_array",
   "parent":{
-    "name":"mappers",
-    "path":"folders/scripts/utils/game/mappers.yy",
+    "name":"ranks",
+    "path":"folders/scripts/game/mappers/ranks.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

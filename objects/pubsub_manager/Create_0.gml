@@ -1,3 +1,7 @@
+/// @desc
+
+/// @type {Struct}
+/// @description { [key: Enum.EVENTS]: [Id.Instance, Function] }
 subscribers = {}
 
 /// @param {Id.Instance} _id
