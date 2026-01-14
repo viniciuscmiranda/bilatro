@@ -36,6 +36,8 @@ poker_hands_levels = array_map(
 /// @type {Array<Struct.Joker>}
 jokers = [
 	new Joker(JOKERS.SPADES_JOKER),
+	new Joker(JOKERS.SPADES_JOKER),
+	new Joker(JOKERS.SPADES_JOKER),
 	new Joker(JOKERS.DIAMONDS_JOKER),
 	new Joker(JOKERS.JOKER)
 ]
@@ -117,7 +119,6 @@ function get_blind_score(_blind, _ante) {
 function get_ante_base_score(_ante) {
 	var _max_ante =  array_length(ante_base_scores) - 1
 	
-	// subtracting because ante count starts at 1
-	_ante = clamp(_ante - 1, 0, _max_ante)
+	_ante = clamp(_ante, 0, _max_ante)
 	return ante_base_scores[_ante]
 }
